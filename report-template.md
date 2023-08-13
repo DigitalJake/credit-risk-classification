@@ -1,31 +1,51 @@
-# Module 12 Report Template
+# Credit Risk
 
-## Overview of the Analysis
+## Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+This analysis was completed to create a supervised ML model that would predict if a loan is a healthy or high-risk option for a lending isntitution. Our data set was a 77,500 line csv file that contained columns of various data about the loan (amount and interest rate) and the borrower's income, debt and accounts, and a column classifying the loan as healthy or high-risk. Only 2,500 of the total loans were classified as high-risk.:
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+### To preform the ML process the data was:
+
+1. Split into labels and features, with the loan status (healthy or high-risk) being the label with the seven columns as features.
+2. The data was then split into training and testing data sets.
+3. A LR model from sklearn was created.
+4. LR was chosen as we are classifying loans as healthy or high-risk.
+5. The model was fit with the training data.
+6. The model was evaluated by comparing the predictions with the test labels.
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+Accuracy: 0.99185
+Balanced Accuracy: 0.95205
 
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+Precision
 
+Healthy: 1.00
+High-Risk: 0.85
 
+Recall
 
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+Healthy: 0.99
+High-Risk: 0.91
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+The LR model predicts the healthy loans well. But, the model has a difficult opportunity to predict high-risk loans. This is shown with about 10% of high-risk loans being classified as healthy.
 
-If you do not recommend any of the models, please justify your reasoning.
+There are a limited number of  high-risk loans in the data for the model to learn from compared to healthy loans. 
+
+### Model Pros and Cons:
+
+Pros
+
+Healthy loan prediction
+Lots of data points for healthy loans
+
+Cons
+
+Limited high-risk loan data points
+Loans are only in value up to $24,000
+
+
+
+
